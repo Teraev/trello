@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo">Trello</div>
+      <div class="menu-item">Рабочие пространства</div>
+      <div class="menu-item">Недавние</div>
+      <div class="menu-item">В избранном</div>
+      <div class="menu-item">Шаблоны</div>
+    </div>
+    <div class="header-right">
+      <button class="create-btn">Создать</button>
+    </div>
+  </header>
+  <main>
+    <div class="board-header">
+      <div class="board-title">desk</div>
+      <button class="board-options-btn">⚙️ По доске</button>
+    </div>
+    <div class="board">
+      <div class="list">
+        <div class="list-header">gohome</div>
+        <div class="card_container">
+          <div class="card">Вступительное собрание</div>
+        </div>
+        <button class="add-card-btn">+ Добавить карточку</button>
+      </div>
+      <div class="list">
+        <div class="list-header">inprogress</div>
+        <div class="card_container">
+          <div class="card">gohome</div>
+        </div>
+        <button class="add-card-btn">+ Добавить карточку</button>
+      </div>
+      <div class="list">
+        <div class="list-header">complete</div>
+        <div class="card_container">
+
+        </div>
+        <button class="add-card-btn">+ Добавить карточку</button>
+      </div>
+      <button class="add-list-btn">+ Добавьте еще одну колонку</button>
+    </div>
+  </main>
+
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Форма</h2>
+      <form id="myForm" name="Form">
+        <label for="name">Задача:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="description">Описание:</label><br>
+        <input type="text" id="description" name="description"><br><br>
+        <select name="tasks">
+          <option value="gohome">gohome</option>
+          <option value="inprogress">inprogress</option>
+          <option value="complete">complete</option>
+        </select>
+        <button class="send">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
