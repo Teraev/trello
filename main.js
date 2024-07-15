@@ -1,13 +1,17 @@
 
-import { Task } from "./component/Todo";
-import { getData, postData } from "./lib/http.request";
-import { reload } from "./lib/utils";
+import { Task } from "./components/Todo.js";
+import { getData, patchData, postData } from "./lib/http.request.js";
+import { reload } from "./lib/utils.js";
 
 
 const modal = document.getElementById("modal");
 const open_modal = document.querySelector(".create-btn");
 const span = document.querySelector(".close");
 const form = document.forms.namedItem("Form");
+const containers = document.querySelectorAll("[data-status]")
+const name = form.querySelector('#name');
+const description = form.querySelector('#description');
+
 
 open_modal.onclick = () => {
   modal.style.display = "flex";
@@ -17,45 +21,67 @@ span.onclick = function () {
   modal.style.display = "none";
 };
 
-form.onsubmit = (e) => {
+
+getData('/todos')
+  .then(res => reload(res.data, Task, containers));
+
+
+form.onsubmit = async (e) => {
   e.preventDefault();
 
-  const fm = new FormData(e.target);
-
-  let todo = {
+  const task = {
     id: crypto.randomUUID(),
-    title: fm.get("name"),
-    description: fm.get("description"),
     createdAt: new Date().toLocaleString(),
-    status: fm.get("tasks"),
   };
 
-  postData("todos/", todo)
-    .then((res) => {
-      console.log("Todo added:", res);
-    })
-    .catch((error) => {
-      console.error("Error adding todo:", error);
-    });
+  const fm = new FormData(e.target)
+
+  fm.forEach((val, key) => task[key] = val)
+
+
+  const names = name.value
+  const descriptions = description.value
+
+  if (names === '' || descriptions === '') {
+    alert('Заполните все поля!');
+    return;
+  }
+
+  const res = await postData("/todos", task);
+
+  if (res.status === 200 || res.status === 201) {
+    getData('/todos')
+      .then(res => reload(res.data, Task, containers));
+  }
 };
 
 
+for (let container of containers) {
+  const parent = container.parentElement
+  container.ondragover = (e) => {
+    e.preventDefault()
+  }
 
-const list_headers = document.querySelectorAll('.list-header');
-const cardContainers = document.querySelectorAll('.card_container');
+  container.ondragenter = (e) => {
+    e.preventDefault()
+    parent.classList.add('hovered')
+  }
 
-list_headers.forEach((header, index) => {
-    const status = header.textContent.trim();
-    const cardContainer = cardContainers[index];
-    
-    getData(`todos?status=${status}`)
-      .then(res => {
-      console.log(res); 
-      reload(res , Task , cardContainer); 
-    })
+  container.ondragleave = (e) => {
+    parent.classList.remove('hovered')
+  }
 
-    cardContainer.оndragover = (event) => {
-        event.preventDefault(); 
-    };
+  container.ondrop = async (e) => {
+    const droppinElem = document.querySelector('[data-selected]');
+    console.log(droppinElem);
+    container.append(droppinElem);
+    parent.classList.remove('hovered');
+    console.log(container);
+    const res = await patchData('/todos/' + droppinElem.id); 
 
-});
+    if (res.id === 200 || res.id === 201) {
+        droppinElem.tasks = container.getAttribute('[data-status]'); 
+    }
+};
+}
+

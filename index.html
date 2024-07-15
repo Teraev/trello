@@ -29,21 +29,21 @@
     <div class="board">
       <div class="list">
         <div class="list-header">gohome</div>
-        <div class="card_container">
-          <div class="card">Вступительное собрание</div>
+        <div class="card_container" data-status="0">
+         
         </div>
         <button class="add-card-btn">+ Добавить карточку</button>
       </div>
       <div class="list">
         <div class="list-header">inprogress</div>
-        <div class="card_container">
-          <div class="card">gohome</div>
+        <div class="card_container" data-status="1">
+          
         </div>
         <button class="add-card-btn">+ Добавить карточку</button>
       </div>
       <div class="list">
         <div class="list-header">complete</div>
-        <div class="card_container">
+        <div class="card_container" data-status="2">
 
         </div>
         <button class="add-card-btn">+ Добавить карточку</button>
@@ -62,10 +62,10 @@
         <input type="text" id="name" name="name"><br>
         <label for="description">Описание:</label><br>
         <input type="text" id="description" name="description"><br><br>
-        <select name="tasks">
-          <option value="gohome">gohome</option>
-          <option value="inprogress">inprogress</option>
-          <option value="complete">complete</option>
+        <select id="select" name="tasks">
+          <option value="0">gohome</option>
+          <option value="1">inprogress</option>
+          <option value="2">complete</option>
         </select>
         <button class="send">Отправить</button>
       </form>

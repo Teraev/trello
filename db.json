@@ -1,67 +1,32 @@
 {
   "todos": [
     {
-      "id": "c9e41111-c841-4914-be2a-42137fc38ab3",
-      "title": "radmi",
+      "id": "3a929273-0de7-4d9f-b4e2-9d69bade2f5d",
+      "createdAt": "15.07.2024, 15:47:31",
+      "name": "fsd",
       "description": "кфв",
-      "createdAt": "12.07.2024, 01:44:00",
-      "status": "inprogress"
+      "tasks": "0"
     },
     {
-      "id": "b993f203-4100-4e95-a9db-89631c355e1f",
-      "title": "radmi",
+      "id": "6b7e4c7c-6b20-4d00-909b-7bf15ab1b832",
+      "createdAt": "15.07.2024, 15:47:35",
+      "name": "кфкыфкфы",
       "description": "кфв",
-      "createdAt": "12.07.2024, 01:44:06",
-      "status": "todo"
+      "tasks": "2"
     },
     {
-      "id": "48a42e8b-e3b9-4dff-80cd-6bf580c89d5f",
-      "title": "radmi",
+      "id": "5bb85fa1-064b-42d6-a3d6-4f8b47801911",
+      "createdAt": "15.07.2024, 15:47:35",
+      "name": "кфкыфкфы",
       "description": "кфв",
-      "createdAt": "12.07.2024, 01:44:35",
-      "status": "gohome"
+      "tasks": "2"
     },
     {
-      "id": "cdffe888-6518-4f66-9996-05327363206e",
-      "title": "rasrasr",
+      "id": "a0f3f77b-8213-4df8-a945-f9902f4763cb",
+      "createdAt": "15.07.2024, 15:47:41",
+      "name": "123123",
       "description": "кфв",
-      "createdAt": "12.07.2024, 01:56:19",
-      "status": "gohome"
-    },
-    {
-      "id": "1d247f20-534a-4c26-9f0b-a015778b509a",
-      "title": "radmi",
-      "description": "кфв",
-      "createdAt": "12.07.2024, 02:02:03",
-      "status": "gohome"
-    },
-    {
-      "id": "68f90252-f1ed-4b1c-a2e6-183ef38c3fe4",
-      "title": "radmi",
-      "description": "кфв",
-      "createdAt": "12.07.2024, 02:11:16",
-      "status": "gohome"
-    },
-    {
-      "id": "e107ebc6-1046-4b07-80e0-287d2969f95b",
-      "title": "radmi",
-      "description": "кфв",
-      "createdAt": "12.07.2024, 02:57:15",
-      "status": "complete"
-    },
-    {
-      "id": "2e45dcdf-f6c7-430a-8c59-b2e67d410080",
-      "title": "radmi",
-      "description": "кфв",
-      "createdAt": "12.07.2024, 02:57:16",
-      "status": "complete"
-    },
-    {
-      "id": "1a6d4163-de94-4872-9f92-2dd25f1fec05",
-      "title": "radmi",
-      "description": "кфв",
-      "createdAt": "12.07.2024, 03:15:16",
-      "status": "gohome"
+      "tasks": "1"
     }
   ]
 }

@@ -176,3 +176,13 @@ main {
   border-bottom: 1px solid #ccc;
   padding: 5px;
 }
+
+
+.hovered {
+  backdrop-filter: blur(2px);
+  border: 2px dashed black;
+}
+
+.hide {
+  display: none;
+}
